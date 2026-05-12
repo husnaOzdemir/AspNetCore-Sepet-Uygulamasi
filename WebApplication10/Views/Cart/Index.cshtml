@@ -1,0 +1,11 @@
+﻿@model List<Product>
+
+<h1>Sepet</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li><span>@item.Id - @item.Name - @item.Price</span> - <a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.Id">Remove</a></li>
+    }
+</ul>
+
+@ViewBag.OtherData
